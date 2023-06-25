@@ -1,1 +1,12 @@
-<h1>Todo List</h1>
+<h1>Todo List</h1><br>
+{{task.valid}}:isvalid<br>
+{{task.invalid}}:isInvalid<br>
+<form>
+  <label id="space">Create Task</label><br>
+  <input #task="ngModel" required class="todo" id="space" type="text" minlength="5" maxlength="30" placeholder="Please enter Tasks" name="todo" [(ngModel)]="toDo"/>
+  <button name="add" [disabled]="task.invalid" class="btn" id="space" (click)="createToDo()">add</button>
+</form>
+<div class="todo-list">
+<input (input)="getSerachList()"  type="text" placeholder="search for todo" name="searchToDo" [(ngModel)]="searchToDo  "/>
+<app-todolist [createdToDoList]="tempToDoList"></app-todolist>
+</div>

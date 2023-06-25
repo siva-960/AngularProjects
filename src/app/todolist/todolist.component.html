@@ -1,0 +1,19 @@
+
+<table>
+    <tr>
+        <th>TodoList</th>
+        <th>Action</th>
+        <th>Status</th>
+    </tr>
+    <tr *ngFor=" let todo  of   createdToDoList">
+        <td>
+            {{todo}}
+        </td>
+        <td>
+            <button [disabled]="donebtn" (click)="action()">Done</button>
+        </td>
+        <td>
+            <button [disabled]="removebtn">remove</button>
+        </td>
+    </tr>
+</table>
